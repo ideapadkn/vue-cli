@@ -5,15 +5,22 @@ import Categories from "@/views/Categories.vue";
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
     path: "/login",
     name: "login",
     meta: {layout: 'empty'},
     component: () => import('@/views/Login.vue'),
+  },
+  {
+    path: "/register",
+    name: "register",
+    meta: {layout: 'main'},
+    component: () => import('@/views/Register.vue'),
+  },
+  {
+    path: "/",
+    name: "home",
+    meta: {layout: 'main'},
+    component: () => import('@/views/HomeView.vue'),
   },
   {
     path: "/categories",
@@ -22,11 +29,23 @@ const routes = [
     component: () => import('@/views/Categories.vue'),
   },
   {
+    path: "/datail-record",
+    name: "datail-record",
+    meta: {layout: 'main'},
+    component: () => import('@/views/DetailRecord.vue'),
+  },
+  {
     path: "/history",
     name: "history",
     meta: {layout: 'main'},
     component: () => import('@/views/History.vue'),
   },
+  {
+    path: "/profile",
+    name: "profile",
+    meta: {layout: 'main'},
+    component: () => import('@/views/Profile.vue'),
+  }, 
   {
     path: "/record",
     name: "record",
@@ -34,22 +53,10 @@ const routes = [
     component: () => import('@/views/Record.vue'),
   },
   {
-    path: "/profile",
-    name: "profile",
+    path: "/planning",
+    name: "planning",
     meta: {layout: 'main'},
-    component: () => import('@/views/Profile.vue'),
-  },
-  {
-    path: "/planing",
-    name: "planing",
-    meta: {layout: 'main'},
-    component: () => import('@/views/Planing.vue'),
-  },
-  {
-    path: "/detail-record",
-    name: "datail-record",
-    meta: {layout: 'main'},
-    component: () => import('@/views/DetailRecord.vue'),
+    component: () => import('@/views/Planning.vue'),
   },
 ];
 
