@@ -40,19 +40,19 @@
 
     <ul class="sidenav app-sidenav open">
       <li>
-        <a href="#" class="waves-effect waves-orange pointer">Счет</a>
+        <router-link to="/" href="#" class="waves-effect waves-orange pointer">Счет</router-link>
       </li>
       <li>
-        <a href="#" class="waves-effect waves-orange pointer">История</a>
+        <router-link to="/history" class="waves-effect waves-orange pointer">История</router-link>
       </li>
       <li>
-        <a href="#" class="waves-effect waves-orange pointer">Планирование</a>
+        <router-link to="/planning" class="waves-effect waves-orange pointer">Планирование</router-link>
       </li>
       <li>
-        <a href="#" class="waves-effect waves-orange pointer">Новая запись</a>
+        <router-link to="/record" class="waves-effect waves-orange pointer">Новая запись</router-link>
       </li>
       <li>
-        <a href="#" class="waves-effect waves-orange pointer">Категории</a>
+        <router-link to="/categories" class="waves-effect waves-orange pointer">Категории</router-link>
       </li>
     </ul>
 
