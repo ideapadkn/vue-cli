@@ -61,69 +61,85 @@
 
 <div>
   <div class="page-title">
-    <h3>Счет</h3>
+    <h3>Новая запись</h3>
+  </div>
 
-    <button class="btn waves-effect waves-light btn-small">
-      <i class="material-icons">refresh</i>
+  <form class="form">
+    <div class="input-field" >
+      <select>
+        <option
+        >name cat</option>
+      </select>
+      <label>Выберите категорию</label>
+    </div>
+
+    <p>
+      <label>
+        <input
+            class="with-gap"
+            name="type"
+            type="radio"
+            value="income"
+        />
+        <span>Доход</span>
+      </label>
+    </p>
+
+    <p>
+      <label>
+        <input
+            class="with-gap"
+            name="type"
+            type="radio"
+            value="outcome"
+        />
+        <span>Расход</span>
+      </label>
+    </p>
+
+    <div class="input-field">
+      <input
+          id="amount"
+          type="number"
+      >
+      <label for="amount">Сумма</label>
+      <span class="helper-text invalid">amount пароль</span>
+    </div>
+
+    <div class="input-field">
+      <input
+          id="description"
+          type="text"
+      >
+      <label for="description">Описание</label>
+      <span
+            class="helper-text invalid">description пароль</span>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit">
+      Создать
+      <i class="material-icons right">send</i>
     </button>
-  </div>
+  </form>
+</div>
 
-  <div class="row">
-    <div class="col s12 m6 l4">
-      <div class="card light-blue bill-card">
-        <div class="card-content white-text">
-          <span class="card-title">Счет в валюте</span>
+</div>
+    </main>
 
-          <p class="currency-line">
-            <span>12.0 Р</span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s12 m6 l8">
-      <div class="card orange darken-3 bill-card">
-        <div class="card-content white-text">
-          <div class="card-header">
-            <span class="card-title">Курс валют</span>
-          </div>
-          <table>
-            <thead>
-            <tr>
-              <th>Валюта</th>
-              <th>Курс</th>
-              <th>Дата</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr>
-              <td>руб</td>
-              <td>12121</td>
-              <td>12.12.12</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large blue" href="#">
+        <i class="large material-icons">add</i>
+      </a>
     </div>
   </div>
-</div>
-
-</div>
-</main>
-
-<div class="fixed-action-btn">
-  <a class="btn-floating btn-large blue" href="#">
-    <i class="large material-icons">add</i>
-  </a>
-</div>
-</div>
 </template>
 
 <script>
-
-export default {
-  name: "HomeView",
-};
+  export default {
+    
+  }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
