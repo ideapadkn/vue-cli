@@ -1,21 +1,25 @@
 <template>
-  <form class="card auth-card">
+  <form class="card auth-card" @submit.prevent="submitHandler">
     <div class="card-content">
       <span class="card-title">Домашняя бухгалтерия</span>
       <div class="input-field">
         <input
             id="email"
             type="text"
-            class="validate"
+            v-model.trim="email"
         >
         <label for="email">Email</label>
-        <small class="helper-text invalid">Email</small>
+        <small 
+          class="helper-text invalid"
+        >
+          Email
+        </small>
       </div>
       <div class="input-field">
         <input
             id="password"
             type="password"
-            class="validate"
+            v-model.trim="password"
         >
         <label for="password">Пароль</label>
         <small class="helper-text invalid">Password</small>
@@ -41,11 +45,40 @@
 </template>
 
 <script>
+import {email, required, minLength} from '@vuelidate/validators'
   export default {
-    
+    name: 'login',
+    data: () => ({
+      email: '',
+      password: '',
+    }),
+    validations: {
+      email: {email, required},
+      password: {required, minLength: minLength(6)},
+    },
+    methods: {
+      submitHandler() {
+        // if (this.v$.$invalid) {
+        //   this.v$.touch()
+        //   return
+        // }
+        const formData = {
+          email: this.email,
+          password: this.password
+        }
+        console.log(formData)
+        this.$router.push('/')
+      }
+    },
   }
 </script>
 
 <style lang="scss" scoped>
 
 </style>
+
+<!--       validation conditions
+  v$.email.$dirty && !v$.email.required
+  v$.email.$dirty && !v$.email.email
+  v$.email.$dirty && !v$.email.minLength
+-->

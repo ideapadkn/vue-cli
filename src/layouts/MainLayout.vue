@@ -1,17 +1,16 @@
 <template>
   <div class="app-main-layout">
-    <navbar 
-      @hide="isOpen = !isOpen"
-    />
-    <sidebar 
-      v-model="isOpen"
-    />
+    
+    <navbar @burger="isOpen = !isOpen" />
 
+    <sidebar v-model="isOpen" />
+    
     <main class="app-content" :class="{full: !isOpen}">
       <div class="app-page">
         <router-view />
       </div>
     </main>
+
     <div class="fixed-action-btn">
       <router-link class="btn-floating btn-large blue" to="/record">
         <i class="large material-icons">add</i>
@@ -21,13 +20,13 @@
 </template>
 
 <script>
-import Navbar from '@/components/app/Navbar';
-import Sidebar from '@/components/app/Sidebar';
+import Navbar from '@/components/app/Navbar'
+import Sidebar from '@/components/app/Sidebar'
 
 export default {
   name: 'main-layout',
   data: () => ({
-    isOpen: true,
+    isOpen: true
   }),
   components: {
     Navbar, Sidebar

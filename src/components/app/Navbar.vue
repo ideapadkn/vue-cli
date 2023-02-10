@@ -2,7 +2,7 @@
   <nav class="navbar orange lighten-1">
     <div class="nav-wrapper">
       <div class="navbar-left">
-        <a href="#" @click.prevent="$emit('hide')">
+        <a href="#" @click.prevent="$emit('burger')">
           <i class="material-icons black-text">dehaze</i>
         </a>
         <span class="black-text">{{ date }}</span>
@@ -39,35 +39,34 @@
   </nav>
 </template>
 
+
 <script>
-  export default {
-    data: () => ({
-      date: new Date(),
-      interval: null,
-      dropdown: null,
-    }),
-    mounted() {
-      this.interval = setInterval(() => {
-        this.date = new Date();
-      }, 1000)
-      this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-        constrainWidth: false,
-      })
-    },
-    beforeDestroy() {
-      clearInterval(this.interval)
-      if (this.dropdown && this.dropdown.destroy) {
-        this.dropdown.destroy;
-      }
-    },
-    methods: {
-      logout() {
-        this.$router.push('/login?message=logout')
-      }
+// import { setInterval, clearInterval } from 'timers';
+export default {
+  data: () => ({
+    date: new Date(),
+    interval: null,
+    dropdown: null,
+  }),
+  methods: {
+    logout() {
+      console.log('Logout')
+      this.$router.push('/login?message=logout')
+    }
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.date = new Date()
+    }, 1000)
+    this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
+      constrainWidth: false
+    })
+  },
+  beforeDestroy() {
+    clearInterval(this.interval)
+    if (this.dropdown && this.dropdown.destroy) {
+      this.dropdown.destroy()
     }
   }
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>

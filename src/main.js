@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { useVuelidate } from "@vuelidate/core";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
@@ -8,4 +9,4 @@ import dateFilter from "./filters/date.filter";
 
 // Vue.filter('date', dateFilter)
 
-createApp(App).use(store).use(router).mount("#app");
+createApp(App).use(useVuelidate).use(store).use(router).mount("#app");
